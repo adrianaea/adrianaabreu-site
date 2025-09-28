@@ -54,6 +54,15 @@ p {
   margin: 0;
 }
 
+iframe {
+  border: 3px solid #6492a0;
+  border-radius: 15px;
+  box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
+  margin: 20px 0;
+  max-width: 80%;
+  height: 300px;
+}
+
 /* ----------------Navbar---------------- */
 nav {
   position: sticky;
@@ -335,3 +344,4 @@ footer a {
   font-weight: bold;
   padding: 10px;
 }
+
