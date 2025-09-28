@@ -11,6 +11,7 @@ hr {
 h1 {
   color: rgb(26, 26, 85);
   font-size: 55px;
+  margin: 0;
 }
 h2 {
   color: #06215a;
@@ -22,6 +23,35 @@ p {
   font-size: 20px;
   width: 75%;
   margin: 0 auto;
+}
+
+/* Header layout */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.name-email {
+  text-align: center;
+}
+.name-email h1 {
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.name-email p {
+  width: 100%;
+  margin: 0;
+}
+
+#adriana {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
+  margin: 0;
 }
 
 /* ----------------Navbar---------------- */
@@ -48,7 +78,6 @@ nav a:hover {
   text-decoration: underline;
   text-decoration-style: wavy;
 }
-
 #home {
   font-weight: bolder;
   text-decoration: underline;
@@ -61,24 +90,20 @@ nav a:hover {
 nav svg {
   fill: rgb(214, 224, 237);
 }
-
 /* Sidebar checkbox */
 #sidebar-active {
   display: none;
 }
-
 /* Sidebar sections */
 .sidebar-sections {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 /* Sidebar toggle button */
 .open-sidebar, .close-sidebar {
   display: none;
 }
-
 /* Sidebar overlay */
 #overlay {
   display: none;
@@ -165,18 +190,32 @@ table {
   margin: 0 auto;
 }
 
-li {
-  text-align: left;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+
+/* Skills section styling */
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.skills li {
   display: inline-block;
-  margin: 0 15px;
+  background-color: #e5edfa;
+  border: 2px solid #6492a0;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 8px;
+  font-size: 18px;
+  color: #06215a;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 
-
 .card {
-  max-width: 80%;
+  max-width: 75%;
   width: 700px;
   margin: 20px auto;
   padding: 20px;
@@ -204,33 +243,80 @@ li {
   height: auto;
   flex-shrink: 0;
 }
+.card a {
+  color: #06215a;
+  text-decoration: none;
+  font-weight: bold;
+}
 .card-info {
   flex: 1;
   text-align: center;
 }
 
+article {
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+article p {
+  text-align: left;
+  margin: 15px auto;
+  line-height: 1.6;
+}
 
-.project1img {
+.projectimg {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin: 20px;
+  padding: 15px;
 }
-.project1img img {
+.projectimg img {
   border-radius: 10px;
   box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
-  height: 500px;
-  width: auto;
+  max-height: 500px;
+  max-width: 90%; 
   flex-shrink: 0;
 }
-.project1img figcaption {
+.projectimg figcaption {
   font-size: small;
-  color: gray;
+  color: rgb(71, 71, 71);
   margin-top: 10px;
 }
 
+/* side-by-side images layout */
+.togetherimgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.togetherimgs > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.togetherimgs img {
+  max-height: 500px;
+  width: auto;
+  margin: 0;
+}
+.projectlink {
+  margin: 20px;
+  padding: 15px;
+}
+.projectlink a {
+  font-size: 1.3em;
+  color: #06215a;
+  background-color: #f9fbff;
+  text-decoration: underline;
+  font-weight: bold;
+}
 
+/* Footer styling */
 footer {
   background-color: rgb(5, 5, 5);
   padding: 25px;

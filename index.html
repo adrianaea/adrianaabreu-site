@@ -10,7 +10,7 @@
   <body>
     <nav>
       <a href="index.html" id="home">Home</a>
-      
+
       <!-- Sidebar toggle button -->
       <input type="checkbox" id="sidebar-active" />
       <label for="sidebar-active" class="open-sidebar">
@@ -25,43 +25,32 @@
       <!-- Sections to move into the sidebar -->
       <div class="sidebar-sections">
         <label for="sidebar-active" class="close-sidebar">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32"
-            viewBox="0 -960 960 960"
-            width="32"
-          >
-            <path
-              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
           </svg>
         </label>
-        
-        <div >
+
+        <div>
           <a href="project1.html">Project 1</a>
           <a href="project2.html">Project 2</a>
-          <a href="https://www.linkedin.com/in/adrianaea" target="_blank"
-            >LinkedIn</a
-          >
-          <a
-            href="https://app.joinhandshake.com/profiles/7an2pw"
-            target="_blank"
-            >HandShake</a
-          >
+          <a href="https://www.linkedin.com/in/adrianaea" target="_blank">LinkedIn</a>
+          <a href="https://app.joinhandshake.com/profiles/7an2pw" target="_blank">HandShake</a>
         </div>
       </div>
     </nav>
 
-    <header>
-      <h1>Adriana Abreu</h1>
-      <p><strong>Email:</strong> ad386007@ucf.edu</p>
-      <img src="images/" alt="Adriana Abreu" />
+    <header class="header-content">
+      <section class="name-email">
+        <h1>Adriana<br />Abreu</h1>
+        <p><strong>Email:</strong> ad386007@ucf.edu</p>
+      </section>
+      <img src="images/adriana.png" alt="Adriana Abreu" id="adriana" />
     </header>
-    <hr /> 
+    <hr />
 
     <main>
-      <section>
-        <h2>Objective Statement:</h2>
+      <article id="objective">
+        <h2>Objective Statement</h2>
         <p>
           Ambitious and organized student pursuing a Bachelor’s Degree in
           Information Technology with a minor in Digital Media; eager to learn
@@ -69,9 +58,9 @@
           problem solving skills, organizational abilities, and a positive
           attitude in a dynamic work environment.
         </p>
-      </section>
+      </article>
 
-      <section>
+      <section id="education">
         <h2>Education</h2>
         <table>
           <tr>
@@ -80,7 +69,7 @@
             <th>Graduation Date</th>
           </tr>
           <tr>
-            <td>Bachelor's in Information Technology</td>
+            <td>Bachelor's in Information Technology with Minor in Digital Media</td>
             <td>University of Central Florida</td>
             <td>Expected May 2026</td>
           </tr>
@@ -92,27 +81,31 @@
         </table>
       </section>
 
-      <section>
+      <section id="projects">
         <h2>Projects</h2>
         <section class="card">
-          <div class="card-content">
-            <div class="card-info">
-              <h3><a href="project1.html">The Vault Website</a></h3>
+          <a href="project1.html">
+            <div class="card-content">
+              <div class="card-info">
+                <h3>The Vault Website</h3>
+              </div>
+              <img src="images/vaulthome.png" alt="project1" />
             </div>
-            <img src="images/vaulthome.png" alt="project1" />
-          </div>
+          </a>
         </section>
         <section class="card">
-          <div class="card-content">
-            <div class="card-info">
-              <h3><a href="project2.html">Artist Informational Page</a></h3>
+          <a href="project2.html">
+            <div class="card-content">
+              <div class="card-info">
+                <h3>Artist Informational Page</h3>
+              </div>
+              <img src="images/project2light.png" alt="project2" />
             </div>
-            <img src="images/project2light.png" alt="project2" />
-          </div>
+          </a>
         </section>
       </section>
 
-      <section>
+      <section class="skills">
         <h2>Skills</h2>
         <ul>
           <li>HTML</li>
@@ -126,26 +119,24 @@
           <li>Problem Solving</li>
           <li>Teamwork</li>
           <li>Time Management</li>
-          <li>Adaptable</li>
-          <li>Creative</li>
+          <li>Multitasking</li>
+          <li>Adaptability</li>
+          <li>Attention to Detail</li>
+          <li>Organization</li>
+          <li>Creativity</li>
         </ul>
       </section>
 
-      <section>
+      <section id="awards">
         <h2>Awards and Honors</h2>
-        <ul>
-          <li>President's Honor Roll</li>
-          <li>Deans List</li>
-        </ul>
+        <p>Multiple Dean's List and President's Honor Roll recognitions.</p>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2025 Adriana Abreu</p>
       <a href="linkedin.com/in/adrianaea" target="_blank">LinkedIn</a>
-      <a href="https://app.joinhandshake.com/profiles/7an2pw" target="_blank"
-        >HandShake</a
-      >
+      <a href="https://app.joinhandshake.com/profiles/7an2pw" target="_blank">HandShake</a>
     </footer>
   </body>
 </html>
