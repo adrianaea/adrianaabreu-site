@@ -53,7 +53,6 @@ p {
   box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
   margin: 0;
 }
-
 iframe {
   border: 3px solid #6492a0;
   border-radius: 15px;
@@ -175,6 +174,18 @@ nav svg {
   .close-sidebar {
     display: block;
     color:#eee
+  }
+}
+
+/* Mobile responsiveness for header */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #adriana {
+    width: 150px;
   }
 }
 
@@ -344,4 +355,3 @@ footer a {
   font-weight: bold;
   padding: 10px;
 }
-
