@@ -23,6 +23,8 @@ p {
   width: 75%;
   margin: 0 auto;
 }
+
+/* ----------------Navbar---------------- */
 nav {
   position: sticky;
   top: 0;
@@ -42,9 +44,106 @@ nav a {
   color: rgb(254, 254, 254);
 }
 nav a:hover {
-  color: #06215a;
+  color: #aee1f0;
   text-decoration: underline;
+  text-decoration-style: wavy;
 }
+
+#home {
+  font-weight: bolder;
+  text-decoration: underline;
+  margin-right: auto;
+  font-size: 1.7em;
+}
+
+/* ----------------Sidebar---------------- */
+/* Sidebar menu button */
+nav svg {
+  fill: rgb(214, 224, 237);
+}
+
+/* Sidebar checkbox */
+#sidebar-active {
+  display: none;
+}
+
+/* Sidebar sections */
+.sidebar-sections {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Sidebar toggle button */
+.open-sidebar, .close-sidebar {
+  display: none;
+}
+
+/* Sidebar overlay */
+#overlay {
+  display: none;
+}
+.close-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 11;
+}
+/* Sidebar behavior for smaller screens */
+@media (max-width: 1030px) {
+  .sidebar-sections {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    z-index: 10;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(5, 44, 59, 0.932);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.5);
+    transition: 0.55s ease-out;
+    padding-top: 65px;
+    padding-left: 15px;
+  }
+
+  /* Stack sidebar links vertically */
+  .sidebar-sections a {
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+  }
+
+  /* Show sidebar when active */
+  #sidebar-active:checked ~ .sidebar-sections {
+    right: 0;
+  }
+
+  /* Overlay for sidebar */
+  #sidebar-active:checked ~ #overlay {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Show the sidebar toggle button */
+  .open-sidebar {
+    display: block;
+  }
+  /* Show the close button when the sidebar is active */
+  .close-sidebar {
+    display: block;
+    color:#eee
+  }
+}
+
 
 table,
 th,
@@ -75,18 +174,9 @@ li {
 }
 
 
-#home {
-  font-weight: bolder;
-  text-decoration: underline;
-  margin-right: auto;
-  font-size: 1.7em;
-}
-.nav-right {
-  display: flex;
-  gap: 60px;
-}
 
 .card {
+  max-width: 80%;
   width: 700px;
   margin: 20px auto;
   padding: 20px;
@@ -107,10 +197,11 @@ li {
   flex-direction: column;
 }
 .card img {
+  max-width: 80%;
   border-radius: 10px;
   box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
   width: auto;
-  height: 350px;
+  height: auto;
   flex-shrink: 0;
 }
 .card-info {
