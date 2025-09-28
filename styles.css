@@ -109,7 +109,8 @@ nav svg {
   align-items: center;
 }
 /* Sidebar toggle button */
-.open-sidebar, .close-sidebar {
+.open-sidebar,
+.close-sidebar {
   display: none;
 }
 /* Sidebar overlay */
@@ -173,7 +174,7 @@ nav svg {
   /* Show the close button when the sidebar is active */
   .close-sidebar {
     display: block;
-    color:#eee
+    color: #eee;
   }
 }
 
@@ -183,13 +184,13 @@ nav svg {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   #adriana {
     width: 150px;
   }
 }
 
-
+/* Table styling: education section */
 table,
 th,
 td {
@@ -209,7 +210,6 @@ table {
   background-color: #81a4b9;
   margin: 0 auto;
 }
-
 
 /* Skills section styling */
 .skills ul {
@@ -233,7 +233,7 @@ table {
   transition: all 0.3s ease;
 }
 
-
+/* Card layout for projects */
 .card {
   max-width: 75%;
   width: 700px;
@@ -273,6 +273,7 @@ table {
   text-align: center;
 }
 
+/* Article styling */
 article {
   padding-bottom: 30px;
   border-radius: 10px;
@@ -283,6 +284,7 @@ article p {
   line-height: 1.6;
 }
 
+/* Single image layout */
 .projectimg {
   display: flex;
   flex-direction: column;
@@ -295,7 +297,7 @@ article p {
   border-radius: 10px;
   box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.342);
   max-height: 500px;
-  max-width: 90%; 
+  max-width: 90%;
   flex-shrink: 0;
 }
 .projectimg figcaption {
@@ -324,6 +326,8 @@ article p {
   width: auto;
   margin: 0;
 }
+
+/* Project link styling */
 .projectlink {
   margin: 20px;
   padding: 15px;
