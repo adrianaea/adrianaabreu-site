@@ -40,6 +40,7 @@ p {
 .name-email h1 {
   line-height: 1.1;
   margin-bottom: 10px;
+  min-height: 121px;
 }
 .name-email p {
   width: 100%;
@@ -75,6 +76,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 }
 nav a {
   margin: 0 30px;
@@ -91,6 +93,57 @@ nav a:hover {
   text-decoration: underline;
   margin-right: auto;
   font-size: 1.7em;
+}
+
+/* ----------------Animations---------------- */
+/* Fade-in on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delay for cards */
+.card:nth-child(1) { transition-delay: 0.1s; }
+.card:nth-child(2) { transition-delay: 0.2s; }
+.card:nth-child(3) { transition-delay: 0.3s; }
+.card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgb(74, 104, 114);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #aee1f0;
+  color: #162d40;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ----------------Sidebar---------------- */
