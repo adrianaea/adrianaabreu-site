@@ -402,6 +402,42 @@ article p {
   font-weight: bold;
 }
 
+
+
+.project-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin: 70px auto 30px;
+    padding: 0 20px;
+}
+
+.project-nav-btn {
+    background-color: #074c61;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.project-nav-btn:hover {
+    background-color: #0d879c;
+    transform: translateY(-2px);
+}
+
+.project-nav-btn.disabled {
+    background-color: #bcbcc4;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+
 /* Footer styling */
 footer {
   background-color: rgb(5, 5, 5);
