@@ -71,7 +71,7 @@ function renderSharedNavbar() {
     </nav>
  */
 
-  navbarMount.innerHTML = `
+  navbarMount.outerHTML = `
     <nav>
       <a href="${basePath}index.html" id="home">Home</a>
 
