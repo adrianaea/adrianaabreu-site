@@ -1,3 +1,139 @@
+// ========== SHARED NAVBAR ==========
+function renderSharedNavbar() {
+  const navbarMount = document.getElementById('site-navbar');
+  if (!navbarMount) {
+    return;
+  }
+
+  const isNestedPage = /\/(projects|created)\//.test(window.location.pathname);
+  const basePath = isNestedPage ? '../' : '';
+
+/*<nav>
+      <a href="index.html" id="home">Home</a>
+
+      <!--tutorial for sidebar: https://youtu.be/8eFeIFKAKHw?si=9p8b7HdxydzxF_Lt-->
+      <!--sidebar toggle button-->
+      <input
+        type="checkbox"
+        id="sidebar-active"
+        title="Toggle sidebar navigation"
+      />
+      <label for="sidebar-active" class="open-sidebar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          fill="#e3e3e3"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+
+      <!-- sidebar overlay -->
+      <label id="overlay" for="sidebar-active"></label>
+
+      <!-- sections to move into the sidebar -->
+      <div class="sidebar-sections">
+        <label for="sidebar-active" class="close-sidebar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </label>
+
+        <!--nav links-->
+        <div>
+          <a href="projects.html">Projects</a>
+          <a href="creativity.html">Creative Endeavors</a>
+          <a
+            href="https://www.linkedin.com/in/adrianaea"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a
+            href="https://app.joinhandshake.com/profiles/7an2pw"
+            target="_blank"
+            rel="noopener"
+            >HandShake</a
+          >
+        </div>
+      </div>
+    </nav>
+ */
+
+  navbarMount.innerHTML = `
+    <nav>
+      <a href="${basePath}index.html" id="home">Home</a>
+
+      <input
+        type="checkbox"
+        id="sidebar-active"
+        title="Toggle sidebar navigation"
+      />
+      <label for="sidebar-active" class="open-sidebar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32px"
+          viewBox="0 -960 960 960"
+          width="32px"
+          fill="#e3e3e3"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+
+      <label id="overlay" for="sidebar-active"></label>
+
+      <div class="sidebar-sections">
+        <label for="sidebar-active" class="close-sidebar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </label>
+
+        <div>
+          <a href="${basePath}projects.html">Projects</a>
+          <a href="${basePath}creativity.html">Creative Endeavors</a>
+          <a
+            href="https://www.linkedin.com/in/adrianaea"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a
+            href="https://app.joinhandshake.com/profiles/7an2pw"
+            target="_blank"
+            rel="noopener"
+            >HandShake</a
+          >
+        </div>
+      </div>
+    </nav>
+  `;
+}
+window.addEventListener('DOMContentLoaded', () => {
+  renderSharedNavbar();
+});
+
 // ========== SMOOTH SCROLL ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
