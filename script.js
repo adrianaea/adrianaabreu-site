@@ -78,6 +78,12 @@ function renderSharedFooter() {
         rel="noopener"
         >HandShake</a
       >
+      <a
+        href="https://github.com/adrianaea"
+        target="_blank"
+        rel="noopener"
+        >GitHub</a
+      >
     </footer>
   `;
 }
