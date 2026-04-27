@@ -428,6 +428,11 @@ article a:hover {
   color: rgb(71, 71, 71);
   margin-top: 10px;
 }
+.three-imgs img {
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+}
 
 /* side-by-side images layout */
 .togetherimgs {
