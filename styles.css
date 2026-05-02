@@ -346,6 +346,45 @@ table {
 }
 
 /* Card layout for projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: min(1600px, 90%);
+  margin: 20px auto 0;
+}
+
+.project-grid .card {
+  max-width: none;
+  width: auto;
+  margin: 0;
+  padding: 14px;
+  height: 100%;
+}
+
+.project-grid .card a {
+  display: block;
+  height: 100%;
+}
+
+.project-grid .card img {
+  max-width: 90%;
+}
+
+@media (max-width: 1500px) {
+  .project-grid {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .project-grid .card {
+    max-width: 75%;
+    width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+}
+
 .card {
   max-width: 75%;
   width: 700px;
@@ -397,12 +436,12 @@ article p {
   line-height: 1.6;
 }
 article a {
-  color: #0384ab;
+  color: #6a20aa;
   text-decoration: none;
   font-weight: bold;
 }
 article a:hover {
-  color: #06215a;
+  color: #a52fc2;
   text-decoration: wavy underline;
   font-weight: bold;
 }
