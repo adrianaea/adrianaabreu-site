@@ -1,12 +1,12 @@
 // ========== SHARED NAVBAR ==========
 function renderSharedNavbar() {
-  const navbarMount = document.getElementById('site-navbar');
+  const navbarMount = document.getElementById("site-navbar");
   if (!navbarMount) {
     return;
   }
 
   const isNestedPage = /\/(projects|created)\//.test(window.location.pathname);
-  const basePath = isNestedPage ? '../' : '';
+  const basePath = isNestedPage ? "../" : "";
 
   navbarMount.outerHTML = `
     <nav>
@@ -61,7 +61,7 @@ function renderSharedNavbar() {
 
 // ========== SHARED FOOTER ==========
 function renderSharedFooter() {
-  const footerMount = document.getElementById('site-footer');
+  const footerMount = document.getElementById("site-footer");
   if (!footerMount) {
     return;
   }
@@ -88,20 +88,20 @@ function renderSharedFooter() {
   `;
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   renderSharedNavbar();
   renderSharedFooter();
 });
 
 // ========== SMOOTH SCROLL ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   });
@@ -110,9 +110,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========== TYPING ANIMATION FOR NAME ==========
 function typeWriter(element, text, speed = 100) {
   let i = 0;
-  element.innerHTML = '';
-  element.style.opacity = '1';
-  
+  element.innerHTML = "";
+  element.style.opacity = "1";
+
   function type() {
     if (i < text.length) {
       element.innerHTML += text.charAt(i);
@@ -124,8 +124,8 @@ function typeWriter(element, text, speed = 100) {
 }
 
 // Start typing animation when page loads
-window.addEventListener('DOMContentLoaded', () => {
-  const nameElement = document.querySelector('.name-contact h1');
+window.addEventListener("DOMContentLoaded", () => {
+  const nameElement = document.querySelector(".name-contact h1");
   if (nameElement) {
     const originalText = nameElement.textContent;
     typeWriter(nameElement, originalText, 80);
@@ -135,85 +135,85 @@ window.addEventListener('DOMContentLoaded', () => {
 // ========== FADE-IN ON SCROLL ==========
 const observerOptions = {
   threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
+  rootMargin: "0px 0px -50px 0px",
 };
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in-visible');
+      entry.target.classList.add("fade-in-visible");
     }
   });
 }, observerOptions);
 
 // Observe elements when page loads
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   const animatedElements = document.querySelectorAll(
-    '#objective, #education, #projects, .skills, #awards, .card, footer'
+    "#objective, #education, #projects, .skills, #awards, .card, footer",
   );
-  
-  animatedElements.forEach(element => {
-    element.classList.add('fade-in');
+
+  animatedElements.forEach((element) => {
+    element.classList.add("fade-in");
     observer.observe(element);
   });
 });
 
 // ========== BACK TO TOP BUTTON ==========
 // Create back to top button
-const backToTopButton = document.createElement('button');
-backToTopButton.innerHTML = '↑';
-backToTopButton.className = 'back-to-top';
-backToTopButton.setAttribute('aria-label', 'Back to top');
+const backToTopButton = document.createElement("button");
+backToTopButton.innerHTML = "↑";
+backToTopButton.className = "back-to-top";
+backToTopButton.setAttribute("aria-label", "Back to top");
 document.body.appendChild(backToTopButton);
 
 // Show/hide button on scroll
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (window.pageYOffset > 300) {
-    backToTopButton.classList.add('show');
+    backToTopButton.classList.add("show");
   } else {
-    backToTopButton.classList.remove('show');
+    backToTopButton.classList.remove("show");
   }
 });
 
 // Scroll to top on click
-backToTopButton.addEventListener('click', () => {
+backToTopButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
 
-
-
-if (window.location.hash === '#forEPIC') {
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hash === "#forEPIC") {
     // Create the modal container
-    const modal = document.createElement('div');
-    modal.id = 'epic-modal';
-    
+    const modal = document.createElement("div");
+    modal.id = "epic-modal";
+
     // Add internal HTML content and basic inline styling
     modal.innerHTML = `
-        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
-            <div style="background: #121212; color: #fff; border: 2px solid #31b0d5; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center; box-shadow: 0px 0px 20px #31b0d5;">
-                <h2 style="color: #007aff; margin-top: 0;">A Note for Epic Games</h2>
-                <p style="font-size: 14px; text-align: center;">
-                    Thank you for viewing my application!
-                </p> <br>
-                <p style="line-height: 2; font-size: 14px; text-align: left;">
-                   Although I may not have 4+ years of experience in Product Management, Live Operations, or Ecommerce Merchandising, etc. <strong>I do have 5+ years playing Fortnite and experiencing the Item Shop firsthand.</strong>
-                </p>
-                <p style="line-height: 2; font-size: 14px; text-align: left;">
-                    I know exactly how players feel about rotation choices, pricing, and bundles because I live it and I see it online.
-                </p> <br><br>
-                <p style="font-size: 14px; text-align: left;">
-                    That's all I have to say, this would be a very cool opportunity and I would love to be part of the team. I hope to hear from you soon!
-                </p> <br>
-                <button onclick="document.getElementById('epic-modal').remove()" style="background: #007aff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-weight: bold; width: 100%;">
-                    View My Site
-                </button>
-            </div>
-        </div>
-    `;
-    
+          <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
+              <div style="background: #121212; color: #fff; border: 2px solid #31b0d5; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center; box-shadow: 0px 0px 20px #31b0d5;">
+                  <h2 style="color: #007aff; margin-top: 0;">A Note for Epic Games</h2>
+                  <p style="font-size: 14px; text-align: center;">
+                      Thank you for viewing my application!
+                  </p> <br>
+                  <p style="line-height: 2; font-size: 14px; text-align: left;">
+                    Although I may not have 4+ years of experience in Product Management, Live Operations, or Ecommerce Merchandising, etc. <strong>I do have 5+ years playing Fortnite and experiencing the Item Shop firsthand.</strong>
+                  </p>
+                  <p style="line-height: 2; font-size: 14px; text-align: left;">
+                      I know exactly how players feel about rotation choices, pricing, and bundles because I live it and I see it online.
+                  </p> <br><br>
+                  <p style="font-size: 14px; text-align: left;">
+                      That's all I have to say, this would be a very cool opportunity and I would love to be part of the team. I hope to hear from you soon!
+                  </p> <br>
+                  <button onclick="document.getElementById('epic-modal').remove()" style="background: #007aff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-weight: bold; width: 100%;">
+                      View My Site
+                  </button>
+              </div>
+          </div>
+      `;
+
     // Append the modal to the webpage body
     document.body.appendChild(modal);
-}
+  }
+});
