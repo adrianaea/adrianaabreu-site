@@ -183,3 +183,37 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
+
+
+if (window.location.hash === '#forEPIC') {
+    // Create the modal container
+    const modal = document.createElement('div');
+    modal.id = 'epic-modal';
+    
+    // Add internal HTML content and basic inline styling
+    modal.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; font-family: sans-serif;">
+            <div style="background: #121212; color: #fff; border: 2px solid #31b0d5; padding: 30px; border-radius: 8px; max-width: 500px; text-align: center; box-shadow: 0px 0px 20px #31b0d5;">
+                <h2 style="color: #007aff; margin-top: 0;">A Note for Epic Games</h2>
+                <p style="font-size: 14px; text-align: center;">
+                    Thank you for viewing my application!
+                </p> <br>
+                <p style="line-height: 2; font-size: 14px; text-align: left;">
+                   Although I may not have 4+ years of experience in Product Management, Live Operations, or Ecommerce Merchandising, etc. <strong>I do have 5+ years playing Fortnite and experiencing the Item Shop firsthand.</strong>
+                </p>
+                <p style="line-height: 2; font-size: 14px; text-align: left;">
+                    I know exactly how players feel about rotation choices, pricing, and bundles because I live it and I see it online.
+                </p> <br><br>
+                <p style="font-size: 14px; text-align: left;">
+                    That's all I have to say, this would be a very cool opportunity and I would love to be part of the team. I hope to hear from you soon!
+                </p> <br>
+                <button onclick="document.getElementById('epic-modal').remove()" style="background: #007aff; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-weight: bold; width: 100%;">
+                    View My Site
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Append the modal to the webpage body
+    document.body.appendChild(modal);
+}
