@@ -29,6 +29,29 @@ p {
   margin: 0 auto;
 }
 
+.vollkorn-sc-regular {
+  font-family: "Vollkorn SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.vollkorn-sc-semibold {
+  font-family: "Vollkorn SC", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.vollkorn-sc-bold {
+  font-family: "Vollkorn SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.vollkorn-sc-black {
+  font-family: "Vollkorn SC", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
 #page-title {
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
