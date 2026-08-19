@@ -57,6 +57,47 @@ p {
   animation: fadeIn 1s ease-out forwards;
 }
 
+/* Sparkle decorations */
+.sparkle-container {
+  position: absolute; /* anchored to the page so it scrolls away like the footer sparkles */
+  inset: 0;
+  pointer-events: none; /* let clicks pass through to the page */
+  overflow: hidden;
+  z-index: 5;
+}
+
+.sparkle-container--footer {
+  position: absolute; /* scoped to the footer instead of the viewport */
+  inset: 0;
+  z-index: 1;
+}
+
+.sparkle {
+  position: absolute; /* positions using left/top custom variables */
+  width: var(--size, 18px); /* random size from JS, fallback 18px */
+  height: var(--size, 18px); /* matches width so stars stay square */
+  left: var(--x, 50%); /* horizontal position from JS */
+  top: var(--y, 50%); /* vertical position from JS */
+  background: rgba(255, 255, 255, 0.95); /* white star fill */
+  clip-path: polygon(50% 0%, 61% 35%, 100% 35%, 68% 57%, 79% 100%, 50% 70%, 21% 100%, 32% 57%, 0% 35%, 39% 35%); /* creates a 5-point star shape */
+  opacity: 0; /* starts invisible so it can fade in */
+  transform: scale(0.4) rotate(0deg); /* tiny starting scale for the twinkle effect */
+  animation: twinkle var(--duration, 2.8s) ease-in-out infinite alternate; /* cycles the star fading in/out */
+  animation-delay: var(--delay, 0s); /* lets each star start at a different time */
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)); /* gives the star a soft glow */
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(25deg);
+  }
+}
+
 /* Header layout */
 .header-content {
   display: flex;
@@ -566,6 +607,7 @@ article a:hover {
 
 /* Footer styling */
 footer {
+  position: relative; /* anchors footer-scoped sparkles */
   background-color: rgb(44, 61, 68);
   padding: 25px;
   margin-top: 120px;

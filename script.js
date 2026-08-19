@@ -183,6 +183,74 @@ backToTopButton.addEventListener("click", () => {
   });
 });
 
+// ========== EDGE SPARKLES ==========
+function createSparkle() {
+  const sparkle = document.createElement("div");
+  sparkle.className = "sparkle";
+
+  const size = `${8 + Math.random() * 14}px`;
+  const duration = `${2 + Math.random() * 3}s`;
+  const delay = `${Math.random() * 4}s`;
+
+  sparkle.style.setProperty("--size", size);
+  sparkle.style.setProperty("--duration", duration);
+  sparkle.style.setProperty("--delay", delay);
+
+  return sparkle;
+}
+
+// top/left/right edges only; bottom edge sparkles live in the footer instead
+function renderEdgeSparkles(count = 18) {
+  const container = document.createElement("div");
+  container.className = "sparkle-container";
+  document.body.appendChild(container);
+
+  for (let i = 0; i < count; i++) {
+    const sparkle = createSparkle();
+
+    const edgeBand = 8; // % of viewport width/height reserved for sparkles
+    const edge = ["top", "left", "right"][Math.floor(Math.random() * 3)];
+    let x, y;
+    if (edge === "top") {
+      x = `${Math.random() * 100}%`;
+      y = `${Math.random() * edgeBand}%`;
+    } else if (edge === "left") {
+      x = `${Math.random() * edgeBand}%`;
+      y = `${Math.random() * 100}%`;
+    } else {
+      x = `${100 - Math.random() * edgeBand}%`;
+      y = `${Math.random() * 100}%`;
+    }
+
+    sparkle.style.setProperty("--x", x);
+    sparkle.style.setProperty("--y", y);
+    container.appendChild(sparkle);
+  }
+}
+
+function renderFooterSparkles(count = 8) {
+  const footer = document.querySelector("footer");
+  if (!footer) {
+    return;
+  }
+
+  const container = document.createElement("div");
+  container.className = "sparkle-container sparkle-container--footer";
+  footer.prepend(container);
+
+  for (let i = 0; i < count; i++) {
+    const sparkle = createSparkle();
+    sparkle.style.setProperty("--x", `${Math.random() * 100}%`);
+    sparkle.style.setProperty("--y", `${Math.random() * 100}%`);
+    container.appendChild(sparkle);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  renderEdgeSparkles();
+  renderFooterSparkles();
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   if (window.location.hash === "#announcement") {
     // Create the modal container
