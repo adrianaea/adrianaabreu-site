@@ -533,16 +533,18 @@ article a:hover {
   margin-top: 10px;
 }
 .three-imgs img {
-  height: 400px;
+  max-height: 400px;
+  max-width: 90%;
   width: auto;
-  object-fit: contain;
 }
 .archimg img {
   max-height: 900px;
   max-width: 90%;
 }
 .togetherimgs.archimg img {
-  max-width: 450px;
+  max-height: 300px;
+  max-width: 90%;
+  width: auto;
 }
 
 /* side-by-side images layout */
