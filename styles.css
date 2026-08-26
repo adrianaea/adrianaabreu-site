@@ -537,6 +537,13 @@ article a:hover {
   width: auto;
   object-fit: contain;
 }
+.archimg img {
+  max-height: 900px;
+  max-width: 90%;
+}
+.togetherimgs.archimg img {
+  max-width: 450px;
+}
 
 /* side-by-side images layout */
 .togetherimgs {
